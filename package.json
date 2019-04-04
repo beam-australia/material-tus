@@ -1,12 +1,12 @@
 {
-  "name": "@beam-australia/upload",
+  "name": "@beam-australia/material-tus",
   "version": "1.0.0",
   "author": "andrewmclagan",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "repository": "http://github.com/beam-australia/upload",
+  "repository": "http://github.com/beam-australia/material-tus",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -73,7 +73,6 @@
   },
   "dependencies": {
     "pretty-bytes": "^5.1.0",
-    "rc-upload": "^2.6.3",
     "tus-js-client": "^1.6.1"
   }
 }
