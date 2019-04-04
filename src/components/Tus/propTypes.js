@@ -3,15 +3,17 @@ import PropTypes from 'prop-types'
 export const defaultProps = {
   className: '',
   name: 'files',
-  endpoint: 'https://uploads.beamaustralia.local',
+  endpoint: 'https://master.tus.io/files/',
   allowedFileTypes: [],
   maxFileSize: null,
   helperText: null,
   label: 'Upload',
+  onClick: () => { },
   onStart: () => { },
   onSuccess: () => { },
   onProgress: () => { },
   onError: () => { },
+  onReset: () => { },
 }
 
 export default {
@@ -24,8 +26,10 @@ export default {
   maxFileSize: PropTypes.number,
   helperText: PropTypes.string,
   label: PropTypes.string,
+  onClick: PropTypes.func,
   onStart: PropTypes.func,
   onSuccess: PropTypes.func,
   onProgress: PropTypes.func,
   onError: PropTypes.func,
+  onReset: PropTypes.func,
 }
