@@ -73,18 +73,18 @@ class Tus extends React.Component {
   }
 
   onProgress = (upload, progress) => {
-    this.callEvent('onProgress')
     this.setState({ progress })
+    this.callEvent('onProgress')
   }
 
   onSuccess = (upload) => {
-    this.callEvent('onSuccess')
     this.setState({ upload, uploading: false })
+    this.callEvent('onSuccess')
   }
 
   onError = (upload, error) => {
-    this.callEvent('onError')
     this.setState({ error: 'Failed to upload, reset to try again.' })
+    this.callEvent('onError')
   }
 
   render() {
