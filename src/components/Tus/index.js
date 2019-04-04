@@ -16,10 +16,12 @@ class Tus extends React.Component {
   }
 
   events = [
+    'onClick',
     'onStart',
     'onProgress',
     'onSuccess',
     'onError',
+    'onReset',
   ]
 
   initialState = {
@@ -37,7 +39,14 @@ class Tus extends React.Component {
     ...this.initialState
   }
 
+  callEvent(event, override) {
+    if (typeof this.props[event] === 'function') {
+      this.props[event](override || this.state)
+    }
+  }
+
   click = () => {
+    this.callEvent('onClick')
     if (this.fileInput.current) {
       this.fileInput.current.click()
     }
@@ -47,21 +56,18 @@ class Tus extends React.Component {
     if (this.fileInput.current) {
       this.fileInput.current.value = null
     }
+    this.state.upload.abort()
     this.setState(this.initialState)
-  }
-
-  callEvent(event) {
-    if (typeof this.props[event] === 'function') {
-      this.props[event](this.state)
-    }
+    this.callEvent('onReset', this.initialState)
   }
 
   onStart = (upload) => {
-    this.callEvent('onStart')
     const { maxFileSize } = this.props
-    this.setState({ uploading: true })
+    this.setState({ upload, uploading: true })
+    this.callEvent('onStart')
     if (maxFileSize && upload.file.size > maxFileSize) {
       this.setState({ error: `File size exceeds ${prettyBytes(maxFileSize)}` })
+      this.callEvent('onError')
       return false
     }
   }

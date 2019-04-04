@@ -41,10 +41,12 @@ storiesOf('Upload', module)
         {
           logEvent => (
             <Upload
+              onClick={state => logEvent('onClick', state)}
               onStart={state => logEvent('onStart', state)}
               onProgress={state => logEvent('onProgress', state)}
               onSuccess={state => logEvent('onSuccess', state)}
               onError={state => logEvent('onError', state)}
+              onReset={state => logEvent('onReset', state)}
             />
           )
         }
