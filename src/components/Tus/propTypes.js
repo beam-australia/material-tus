@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 export const defaultProps = {
   className: '',
   name: 'files',
-  endpoint: 'https://master.tus.io/files',
+  endpoint: 'https://master.tus.io/files/',
   allowedFileTypes: [],
   maxFileSize: null,
   helperText: null,
