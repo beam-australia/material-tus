@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import App from './components/App'
 import EventLogger from './components/EventLogger'
-import { Upload } from '@beam-australia/upload'
+import { Upload } from '@beam-australia/material-tus'
 
 storiesOf('Upload', module)
   .add('All files', () => (
