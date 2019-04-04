@@ -19,7 +19,7 @@ export function IconPDF({ className }) {
 }
 
 export function IconText({ className }) {
-  return <svg aria-hidden="true" className={className} viewBox="0 0 62 62" xmlns="http://www.w3.org/2000/svg">
+  return <svg aria-hidden="true" className={className} viewBox="0 0 62 62">
     <path d="M4.309 4.309h24.912v53.382h-6.525v3.559h16.608v-3.559h-6.525V4.309h24.912v10.676h3.559V.75H.75v14.235h3.559z" fill-rule="nonzero" fill="#000" />
   </svg>
 }
