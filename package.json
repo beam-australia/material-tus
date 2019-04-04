@@ -43,9 +43,6 @@
     "@storybook/react": "^5.0.5",
     "@storybook/storybook-deployer": "^2.8.1",
     "@svgr/rollup": "^2.4.1",
-    "@uppy/core": "^0.30.3",
-    "@uppy/react": "^0.30.3",
-    "@uppy/tus": "^0.30.3",
     "babel-eslint": "^8.2.5",
     "babel-loader": "^8.0.5",
     "cross-env": "^5.1.4",
@@ -75,9 +72,8 @@
     "rollup-plugin-url": "^2.2.0"
   },
   "dependencies": {
-    "@uppy/core": "^0.30.3",
-    "@uppy/file-input": "^0.30.3",
-    "@uppy/react": "^0.30.3",
-    "@uppy/tus": "^0.30.3"
+    "pretty-bytes": "^5.1.0",
+    "rc-upload": "^2.6.3",
+    "tus-js-client": "^1.6.1"
   }
 }

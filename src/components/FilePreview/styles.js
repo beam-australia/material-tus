@@ -4,7 +4,6 @@ export default theme => ({
     marginRight: theme.spacing.unit * 2,
   },
   filePreview: {
-    fontFamily: 'system-ui,-apple-system,BLinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif',
     display: 'flex',
     alignItems: 'center'
   },

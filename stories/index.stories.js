@@ -1,31 +1,53 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import App from './components/App'
+import EventLogger from './components/EventLogger'
 import { Upload } from '@beam-australia/upload'
 
 storiesOf('Upload', module)
   .add('All files', () => (
     <App>
-      <Upload debug={true} />
+      <Upload />
     </App>
   ))
-  .add('Documents files', () => (
+  .add('Overide helper text', () => (
     <App>
-      <Upload debug={true} allowedFileTypes="documents" />
+      <Upload helperText="Upload whatever you want!" />
     </App>
   ))
-  .add('Images files', () => (
+  .add('Preset documents files', () => (
     <App>
-      <Upload debug={true} allowedFileTypes="images" />
+      <Upload allowedFileTypes="documents" />
+    </App>
+  ))
+  .add('Preset image files', () => (
+    <App>
+      <Upload allowedFileTypes="images" />
     </App>
   ))
   .add('Button label', () => (
     <App>
-      <Upload debug={true} label="Upload your resumé" />
+      <Upload label="Upload your resumé" />
     </App>
   ))
   .add('100Kb Max', () => (
     <App>
-      <Upload debug={true} maxFileSize={100000} />
+      <Upload allowedFileTypes="documents" maxFileSize={100000} />
     </App>
   ))
+  .add('Events', () =>
+    <App>
+      <EventLogger>
+        {
+          logEvent => (
+            <Upload
+              onStart={state => logEvent('onStart', state)}
+              onProgress={state => logEvent('onProgress', state)}
+              onSuccess={state => logEvent('onSuccess', state)}
+              onError={state => logEvent('onError', state)}
+            />
+          )
+        }
+      </EventLogger>
+    </App>
+  )

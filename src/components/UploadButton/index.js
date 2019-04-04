@@ -1,61 +1,43 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import get from 'lodash/get'
-import FileInput from '../FileInput'
-import { uppy as uppyPropTypes } from '@uppy/react/lib/propTypes'
+import withTus from '../../lib/withTus'
 import { withStyles } from '@material-ui/core/styles'
 import CloudIcon from '@material-ui/icons/CloudUpload'
 import Button from '@material-ui/core/Button'
+import HelperText from '../HelperText'
 import styles from './styles'
 
-const nullInput = {
-  click: () => console.log('[UploadButton] No input ref.')
-}
-
-class UploadButton extends React.Component {
-
-  input = nullInput
-
-  getInputRef = (input) => {
-    this.input = get(input, 'plugin.input', nullInput)
+const UploadButton = ({ classes, tus, ...props }) => {
+  if (tus.upload) {
+    return null
   }
-
-  onClick = () => {
-    this.input.click()
-    this.props.onClick()
-  }
-
-  render() {
-    const { uppy, classes, helperText, label, ...props } = this.props
-    return (
-      <div className={classes.root}>
-        <div style={{ display: 'none' }}>
-          <FileInput uppy={uppy} ref={this.getInputRef} />
-        </div>
-        <div>
-          <Button {...props} onClick={this.onClick}>
-            {label}<CloudIcon className={classes.icon} />
-          </Button>
-        </div>
-        <p className={classes.helperText}>{helperText}</p>
+  return (
+    <div className={classes.root}>
+      <div>
+        <Button {...props} onClick={tus.click} disabled={tus.uploading}>
+          {tus.buttonLabel}<CloudIcon className={classes.icon} />
+        </Button>
       </div>
-    )
-  }
+      <HelperText
+        allowedFileTypes={tus.allowedFileTypes}
+        defaultText={tus.helperText}
+        maxFileSize={tus.maxFileSize}
+      />
+    </div>
+  )
 }
 
 UploadButton.propTypes = {
-  uppy: uppyPropTypes,
   classes: PropTypes.object.isRequired,
-  helperText: PropTypes.string,
   ...Button.propTypes
 }
 
 UploadButton.defaultProps = {
-  helperText: '',
-  onClick: () => {},
   color: 'primary',
   variant: 'outlined',
   size: 'medium'
 }
 
-export default withStyles(styles)(UploadButton)
+export default withStyles(styles)(
+  withTus(UploadButton)
+)

@@ -10,7 +10,6 @@ const DeleteButton = ({ classes, className, ...props }) => {
   return (
     <Button
       className={classNames(className, classes.root)}
-      // variant="outlined"
       size="small"
       color="primary"
       {...props}

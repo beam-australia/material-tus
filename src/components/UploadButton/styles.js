@@ -5,10 +5,5 @@ export default theme => ({
   },
   icon: {
     marginLeft: theme.spacing.unit,
-  },
-  helperText: {
-    color: '#666',
-    margin: 0,
-    marginLeft: theme.spacing.unit * 2,
   }
 })

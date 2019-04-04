@@ -26,6 +26,6 @@ export function getAcceptedTypes(type = '') {
   return get(types, `${type}.mime`, [])
 }
 
-export function getAcceptedText(type = '') {
-  return get(types, `${type}.helperText`, '')
+export function getAcceptedText(type = '', defaultText = '') {
+  return get(types, `${type}.helperText`, defaultText)
 }

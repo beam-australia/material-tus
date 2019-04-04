@@ -1,29 +1,34 @@
 import React from 'react'
-import StatusBar from '@uppy/react/lib/StatusBar'
-import { uppy as uppyPropTypes } from '@uppy/react/lib/propTypes'
-import '@uppy/status-bar/dist/style.min.css'
-import './styles.css'
+import classNames from 'classnames'
+import { withStyles } from '@material-ui/core/styles'
+import LinearProgress from '@material-ui/core/LinearProgress'
+import Simple from './Simple'
+import styles from './styles'
 
-class Progress extends React.Component {
-  render() {
-    return (
-      <div className="beam beam-uploader-progress">
-        <StatusBar
-          uppy={this.props.uppy}
-          showProgressDetails={true}
-          hideUploadButton={false}
-          hideAfterFinish={false}
-        />
-      </div>
-    )
+const Progress = ({ classes, className, uploading, percentage }) => {
+  if (uploading === false && percentage === 0) {
+    return null
   }
+  if (percentage > 99 && uploading === false) {
+    return null
+  }
+  return (
+    <div className={classNames(className)}>
+      <LinearProgress
+        variant="determinate"
+        value={percentage}
+        className={classes.linear}
+      />
+      <Simple percentage={percentage} />
+    </div>
+  )
 }
 
 Progress.propTypes = {
-  uppy: uppyPropTypes,
+
 }
 
 Progress.defaultProps = {
 }
 
-export default Progress
+export default withStyles(styles)(Progress)

@@ -32,7 +32,9 @@ export default {
     babel({
       exclude: 'node_modules/**'
     }),
-    resolve(),
+    resolve({
+      browser: true
+    }),
     commonjs()
   ]
 }
