@@ -1,14 +1,1 @@
-<DeleteButton>
-<UploadButton>
-
-<DeleteIcon>
-<ResetIcon>
-<DoneIcon>
-<CloudIcon>
-
-<Fade>
-
-<LinearProgress>
-<CircularProgress>
-
-ES = 117Kb
+16.19KB Gzipped.
