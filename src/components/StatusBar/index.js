@@ -10,6 +10,9 @@ class StatusBar extends React.Component {
   render() {
     const { classes } = this.props
     const { progress, uploading, error } = this.props.tus
+    if (uploading === false && !error) {
+      return null
+    }
     return (
       <div className={classes.root}>
         <Progress
