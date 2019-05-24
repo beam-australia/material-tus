@@ -7,7 +7,7 @@ export default theme => ({
     fontSize: 14
   },
   icon: {
-    marginRight: theme.spacing.unit * 2,
+    marginRight: theme.spacing(2),
   },
   reset: {
     marginLeft: 'auto',

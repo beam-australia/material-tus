@@ -12,7 +12,7 @@ const styles = theme => ({
     fontSize: 14
   },
   percentage: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing(),
   },
   done: {
     color: green[400]

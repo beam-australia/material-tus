@@ -4,6 +4,6 @@ export default theme => ({
     alignItems: 'center'
   },
   icon: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing(),
   }
 })

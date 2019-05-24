@@ -1,7 +1,7 @@
 export default theme => ({
   imagePreview: {
     width: 75,
-    marginRight: theme.spacing.unit * 2,
+    marginRight: theme.spacing(2),
   },
   filePreview: {
     display: 'flex',
@@ -9,7 +9,7 @@ export default theme => ({
   },
   fileIcon: {
     width: 30,
-    marginRight: theme.spacing.unit * 2,
+    marginRight: theme.spacing(2),
   },
   fileIconSvg: {
     fill: 'currentColor',
