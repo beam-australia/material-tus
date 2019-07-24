@@ -8,7 +8,7 @@ import HelperText from '../HelperText'
 import styles from './styles'
 
 const UploadButton = ({ classes, tus, ...props }) => {
-  if (tus.progress.percentage > 99 && tus.uploading === false) {
+  if (tus.upload || (tus.progress.percentage > 99 && tus.uploading === false)) {
     return null
   }
   return (

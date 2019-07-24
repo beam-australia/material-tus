@@ -56,7 +56,9 @@ class Tus extends React.Component {
     if (this.fileInput.current) {
       this.fileInput.current.value = null
     }
-    this.state.upload.abort()
+    if (typeof this.state.upload.abort === 'function') {
+      this.state.upload.abort()
+    }
     this.setState(this.initialState)
     this.callEvent('onReset', this.initialState)
   }

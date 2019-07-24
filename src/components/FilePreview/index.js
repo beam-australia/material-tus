@@ -1,48 +1,13 @@
 import React from 'react'
-import prettyBytes from 'pretty-bytes'
 import withTus from '../../lib/withTus'
-import { withStyles } from '@material-ui/core/styles'
-import Fade from '@material-ui/core/Fade';
-import getIconByMime from '../../lib/getIconByMime'
-import DeleteButton from '../DeleteButton'
-import styles from './styles.js'
+import FilePreview from './FilePreview.js'
 
-const FilePreview = ({ tus, classes }) => {
+const WrappedFilePreview = ({ tus, ...props }) => {
   const { upload, uploading } = tus
   if (!upload || uploading) {
     return null
   }
-  const { color, icon } = getIconByMime(upload.file.type)
-  return (
-    <Fade in timeout={350}>
-      <div className={classes.filePreview}>
-        {icon === 'image' &&
-          <img
-            className={classes.imagePreview}
-            alt={upload.file.name}
-            src={upload.url}
-          />}
-        {icon !== 'image' &&
-          <div className={classes.fileIcon} style={{ color: color }}>
-            {React.createElement(icon, { className: classes.fileIconSvg })}
-          </div>}
-        <a
-          className={classes.fileName}
-          href={upload.url}
-          target="_blank"
-        >{upload.file.name}</a>
-        <div className={classes.fileSize}>
-          ({prettyBytes(upload.file.size)})
-      </div>
-        <DeleteButton
-          className={classes.deleteButton}
-          onClick={tus.reset}
-        />
-      </div>
-    </Fade>
-  )
+  return (<FilePreview upload={upload} {...props} />)
 }
 
-export default withStyles(styles)(
-  withTus(FilePreview)
-)
+export default withTus(WrappedFilePreview)
