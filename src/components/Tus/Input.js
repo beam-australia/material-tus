@@ -13,12 +13,12 @@ export class Input extends React.Component {
     this.props.onSuccess(upload);
   };
 
-  onProgress = (upload, { bytesSent, bytesTotal }) => {
-    const percentage = Math.round((bytesSent / bytesTotal) * 100);
-    console.log('bytesSent', bytesSent);
-    console.log('bytesTotal', bytesTotal);
-    console.log('percentage', percentage);
-    this.props.onProgress(upload, { bytesSent, bytesTotal, percentage });
+  onProgress = (upload, { uploaded, total }) => {
+    const percentage = Math.round((uploaded / total) * 100);
+    this.props.onProgress(upload, { uploaded, total, percentage });
+    if (percentage === 100) {
+      this.props.onSuccess(upload);
+    }
   };
 
   onError = (upload, error) => {
@@ -43,9 +43,8 @@ export class Input extends React.Component {
         filetype: file.type
       },
       onError: error => this.onError(upload, error),
-      onProgress: (bytesSent, bytesTotal) =>
-        this.onProgress(upload, { bytesSent, bytesTotal }),
-      onSuccess: () => this.onSuccess(upload)
+      onProgress: (uploaded, total) =>
+        this.onProgress(upload, { uploaded, total })
     });
     return upload;
   };
