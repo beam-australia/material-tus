@@ -1,12 +1,12 @@
 {
-  "name": "@beam-australia/material-tus",
+  "name": "@beam-australia/mui-tus-upload",
   "version": "0.8.5",
   "author": "andrewmclagan",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "repository": "http://github.com/beam-australia/material-tus",
+  "repository": "http://github.com/beam-australia/mui-tus-upload",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
