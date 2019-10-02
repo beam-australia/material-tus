@@ -1,5 +1,5 @@
 import React from 'react'
-import prettyBytes from 'pretty-bytes'
+import prettyBytes from 'pretty-bytes-es5'
 import { withStyles } from '@material-ui/core/styles'
 import Fade from '@material-ui/core/Fade';
 import getIconByMime from '../../lib/getIconByMime'

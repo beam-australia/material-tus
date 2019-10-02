@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { getAcceptedText } from '../../lib/acceptedTypes'
-import prettyBytes from 'pretty-bytes'
+import prettyBytes from 'pretty-bytes-es5'
 import styles from './styles'
 
 const HelperText = ({ classes, maxFileSize, allowedFileTypes, defaultText }) => {

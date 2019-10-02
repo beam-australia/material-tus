@@ -11356,15 +11356,15 @@ preserve@^0.2.0:
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
   integrity sha1-gV7R9uvGWSb4ZbMQwHE7yzMVzks=
 
+pretty-bytes-es5@^5.1.9:
+  version "5.1.9"
+  resolved "https://registry.yarnpkg.com/pretty-bytes-es5/-/pretty-bytes-es5-5.1.9.tgz#cf107e59e7eb112f885cc2b4aefc22e7ee61053d"
+  integrity sha512-ZDUf3nYWb8erk3Tngte1+78ZAwLzuPIIF6KvVcrDJjnxMWHo5VjoMmndTTMqxxOsuEXAltiq5aTHApwUrtfjcw==
+
 pretty-bytes@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-4.0.2.tgz#b2bf82e7350d65c6c33aa95aaa5a4f6327f61cd9"
   integrity sha1-sr+C5zUNZcbDOqlaqlpPYyf2HNk=
-
-pretty-bytes@^5.1.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-5.3.0.tgz#f2849e27db79fb4d6cfe24764fc4134f165989f2"
-  integrity sha512-hjGrh+P926p4R4WbaB6OckyRtO0F0/lQBiT+0gnxjV+5kjPBrfVBFCsCLbMqVQeydvIoouYTCmmEURiH3R1Bdg==
 
 pretty-error@^2.0.2, pretty-error@^2.1.1:
   version "2.1.1"

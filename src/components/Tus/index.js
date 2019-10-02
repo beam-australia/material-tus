@@ -1,6 +1,6 @@
 import React from 'react'
 import Input from './Input'
-import prettyBytes from 'pretty-bytes'
+import prettyBytes from 'pretty-bytes-es5'
 import propTypes, { defaultProps } from './propTypes'
 import TusContext from './TusContext'
 
